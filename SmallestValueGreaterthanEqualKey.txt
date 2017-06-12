@@ -1,0 +1,26 @@
+class Node
+{
+    int value;
+    Node *left;
+    Node *right;
+}
+int FindSmallestValueLargerThanOrEqualToKey(Node root, int key)
+{
+    if(root == NULL) { 
+        return  -1; 
+    }
+    else if(root->value==key) {
+        return key;
+    }   
+    else if(root->value<key) {
+        return  FindSmallestValueLargerThanOrEqualToKey(node->right, key);
+    }
+    else {
+        int i = FindSmallestValueLargerThanOrEqualToKey(node->left, key);
+        if(i <= -1) {
+            return node.value;
+        } else {
+            return i;
+        }
+    }
+}
