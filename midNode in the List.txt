@@ -1,0 +1,21 @@
+int midNode(Node *head)
+{
+  if(head==NULL || head->next->next==NULL)
+  {
+      printf("only 2 Elements");
+      throw ;
+  }
+      else
+        {
+            Node *first=head->next;
+            Node *second=head->next->next;
+            while(second->next!=NULL)
+            {
+                first=first->next;
+                second=second->next->next;
+            }
+            //printf("Mid Element is %d\n",first->data);
+        }
+    return (first->data);
+	
+}
