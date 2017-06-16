@@ -1,0 +1,43 @@
+/*
+struct node
+{
+    int data;
+    node* left;
+    node* right;
+};
+
+*/
+void traverseLeft(node* root)
+{
+    static node * org=root;
+    if(root==NULL)
+    {
+        return;
+    }
+    traverseLeft(root->left);
+    if(org!=root)
+    printf("%d ",root->data);
+}
+
+void traverseRight(node* root)
+{
+    static node * org=root;
+    if(root==NULL)
+    {
+        return;
+    }
+    if(org!=root)
+    printf("%d ",root->data);
+    traverseRight(root->right);
+}
+
+void topView(node * root) {
+ 
+    if(root==NULL)
+    {
+        return;
+    }
+    traverseLeft(root);
+    printf("%d ",root->data);
+    traverseRight(root);
+}
